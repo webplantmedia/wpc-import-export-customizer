@@ -195,13 +195,25 @@ class WPC_Import_Export_Customizer_Admin {
 			return;
 		}
 
+		$uri = get_template_directory_uri();
+		$uri_esc = preg_quote( $uri, '/' );
+
 		echo '<pre>';
 		foreach ( $wpc2_default as $key => $value ) {
-			if ( ! array_key_exists( $key, $mods ) ) {
-				continue;
+			if ( array_key_exists( $key, $mods ) ) {
+				$value = $mods[ $key ];
 			}
 
-			echo '$wpc2_default[\'' . $key . '\'] = \''.$value.'\';<br />';
+			$value = "'" . $value . "';";
+
+			if ( preg_match( '/'.$uri_esc.'.*/', $value ) ) {
+				$value = 'get_template_directory_uri() . ' . str_replace( $uri, '', $value );
+			}
+			if ( $value != strip_tags( $value ) ) {
+				$value = htmlspecialchars( $value );
+			}
+
+			echo '$wpc2_default[\'' . $key . '\'] = '.$value.'<br />';
 		}
 		echo '</pre>';
 	}
