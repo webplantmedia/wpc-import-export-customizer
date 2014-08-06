@@ -1,0 +1,11 @@
+/* This stylesheet is used to style the admin option form of the plugin. */
+
+/**
+* CSS Hacks
+*
+* Needed common CSS trick
+*/
+#wpc-import-export-customizer-plugin .postbox {
+	padding-left: 20px;
+	padding-right: 20px;
+}
