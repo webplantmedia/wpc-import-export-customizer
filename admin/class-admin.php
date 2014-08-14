@@ -41,7 +41,7 @@ class WPC_Import_Export_Customizer_Admin {
 	 */
 	protected $plugin_screen_hook_suffix = null;
 
-	const VERSION = '1.0';
+	const VERSION = '1.1';
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a

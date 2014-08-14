@@ -5,7 +5,7 @@ Plugin URI: http://webplantmedia.com/starter-themes/wordpresscanvas/features/plu
 Description: Import and export customizer settings through the WordPress dashboard.
 Author: Chris Baldelomar
 Author URI: http://webplantmedia.com/
-Version: 1.0
+Version: 1.1
 License: GPLv2 or later
 */
 

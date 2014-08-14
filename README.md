@@ -45,7 +45,7 @@ Thank you so much for even considering supporting my work. If you have benefited
 
 ## Changelog ##
 
-### Version 1.0
+### Version 1.1
 
 * Plugin released.  Everything is new!
 
