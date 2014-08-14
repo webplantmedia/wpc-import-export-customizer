@@ -45,4 +45,28 @@ $plugin_prefix = $this->get_plugin_prefix();
 
 	</form>
 
+	<form method="post" action="">
+
+		<?php if ( isset( $_POST['wpc2_iec_restore_default_options'] ) && $_POST['wpc2_iec_restore_default_options'] ) : ?>
+
+			<div>
+
+				<h3><?php echo __( 'Restoring Default Options', 'wpc-import-export-customizer' ); ?></h3>
+
+				<div class="postbox">
+
+					<?php $this->restore_default_options(); ?>
+
+				</div>
+
+			</div>
+	
+		<?php endif; ?>
+
+		<input type="hidden" name="wpc2_iec_restore_default_options" value="1" />
+
+		<?php submit_button( 'Restore Default Options' ); ?>
+
+	</form>
+
 </div>

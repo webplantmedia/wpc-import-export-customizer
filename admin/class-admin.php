@@ -217,4 +217,28 @@ class WPC_Import_Export_Customizer_Admin {
 		}
 		echo '</pre>';
 	}
+	
+	public function restore_default_options() {
+		global $wpc2_default;
+		$restored = false;
+
+		if ( ! $mods = get_theme_mods() ) {
+			echo '<p>No Data</p>';
+			return;
+		}
+
+		echo '<p>The following options have been restored:</p>';
+		echo '<p>';
+		foreach ( $wpc2_default as $key => $value ) {
+			if ( array_key_exists( $key, $mods ) ) {
+				remove_theme_mod( $key );
+				echo $key . '<br />';
+				$restored = true;
+			}
+		}
+		if ( ! $restored ) {
+			echo "No options to restore.";
+		}
+		echo '</p>';
+	}
 }
